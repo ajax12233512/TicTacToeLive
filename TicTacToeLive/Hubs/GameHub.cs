@@ -20,5 +20,9 @@ namespace TicTacToeLive.Hubs
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, gameId);
         }
+        public async Task MakeMove(string gameId, string spot)
+        {
+            await Clients.Groups(gameId).SendAsync("RecieveMove", spot);
+        }
     }
 }
