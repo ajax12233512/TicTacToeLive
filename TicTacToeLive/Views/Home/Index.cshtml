@@ -1,0 +1,67 @@
+﻿@model Home.Views_Home_Index
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <h1 class="display-3">Welcome to <span class="text-primary">Tic Tac Toe Arena</span>!</h1>
+    <p class="lead">Play the <strong>Classic Game</strong> of Tic Tac Toe</p>
+    <p class="mb-5">Are you ready to engage in some friendly strategic competition? Step into the world of Tic Tac Toe and challenge your friends or test your skills against our AI opponent. Whether you're a seasoned strategist or new to the game, <span class="text-success">Tic Tac Toe Arena</span> guarantees hours of fun and brain-teasing excitement.</p>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <ul class="feature-list">
+                <li>🎮 Play Against Friends: Invite your friends to a thrilling match of Tic Tac Toe. Prove your superiority and claim victory!</li>
+                <li>🤖 Challenge the AI: Want a solo challenge? Pit your wits against our advanced AI and see if you can outsmart it.</li>
+                <li>🌈 Sleek and User-Friendly: Our intuitive interface makes it a breeze to place your marks on the grid. No confusion, just pure enjoyment.</li>
+                <li>🏆 Climb the Leaderboard: Keep track of your wins and losses. Can you climb to the top and become the ultimate Tic Tac Toe master?</li>
+            </ul>
+        </div>
+    </div>
+    <form class="form-control">
+        <button class="btn btn-success btn-lg start-button input-group" id="startGameBtn">Start Playing 🚀</button>
+        <button class="btn btn-primary btn-lg start-button input-group" id="joinGameBtn">Join Game 🚀</button>
+        <input class="input-group-text" placeholder="Invite Link" id="roomCode"/>
+    </form>
+
+    <p class="mt-5">Remember, Tic Tac Toe isn't just a game; it's a battle of wits. So, gather your tactics, rally your strategies, and let the games begin!</p>
+    <p>Stay connected for updates, tournaments, and more. Join the <span class="text-success">Tic Tac Toe</span> community today!</p>
+    <p><a href="#">Follow Us on Social Media</a></p>
+</div>
+
+<style>
+    body {
+        font-family: 'Raleway', sans-serif;
+        background-color: #f9f9f9;
+    }
+
+
+    h1 {
+        font-size: 3rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    strong {
+        color: #2ecc71;
+    }
+
+    .feature-list {
+        text-align: left;
+        margin-left: 30px;
+        list-style-type: none;
+    }
+
+        .feature-list li {
+            margin-bottom: 15px;
+        }
+
+    .start-button {
+        margin-top: 30px;
+    }
+
+
+</style>
+
+
+<script src="~/lib/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/js/site.js"></script>
