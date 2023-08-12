@@ -5,6 +5,7 @@ var message = document.getElementById("message");
 var gameId = sessionStorage.getItem("gameId");
 var username = sessionStorage.getItem("username");
 var join = sessionStorage.getItem("join");
+var mark = sessionStorage.getItem("mark")
 async function start() {
     try {
         await connection.start();
