@@ -3,6 +3,7 @@ var messageContainer = document.getElementById("message-container");
 var sendBtn = document.getElementById("sendBtn");
 var message = document.getElementById("message");
 var gameId = sessionStorage.getItem("gameId");
+var username = sessionStorage.getItem("username");
 var join = sessionStorage.getItem("join");
 async function start() {
     try {
@@ -19,16 +20,16 @@ start().then(function () {
 });
 //figure out why connection is on on on state
 
-connection.on("RecieveMessage", function (message) {
+connection.on("RecieveMessage", function (message, fromUsername) {
     var newItem = document.createElement("li");
-    newItem.textContent = message;
+    newItem.textContent = fromUsername + " : " + message;
     console.log("message sent", message);
     messageContainer.appendChild(newItem);
 })
 
 sendBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    connection.invoke("SendMessage", message.value, gameId).catch(function (err) {
+    connection.invoke("SendMessage", message.value, gameId, username).catch(function (err) {
         return console.error(err.toString());
     });
 })

@@ -6,9 +6,9 @@ namespace TicTacToeLive.Hubs
 {
     public class GameHub : Hub
     {
-        public async Task SendMessage(string message, string gameId)
+        public async Task SendMessage(string message, string gameId, string fromUsername)
         {
-            await Clients.Groups(gameId).SendAsync("RecieveMessage", message);
+            await Clients.Groups(gameId).SendAsync("RecieveMessage", message, fromUsername);
         }
         /*
         public async Task JoinGame(string gameId)
