@@ -19,7 +19,6 @@ async function start() {
 start().then(function () {
     connection.invoke("CreateGame", gameId);
 });
-//figure out why connection is on on on state
 
 connection.on("RecieveMessage", function (message, fromUsername) {
     var newItem = document.createElement("li");
