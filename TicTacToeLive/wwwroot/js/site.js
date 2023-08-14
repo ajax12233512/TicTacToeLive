@@ -6,6 +6,8 @@ var roomCodeInput = document.getElementById("roomCode");
 var startGameBtn = document.getElementById("startGameBtn");
 var joinGameBtn = document.getElementById("joinGameBtn");
 var inputUsername = document.getElementById("username");
+
+localStorage.clear();
 function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -35,7 +37,7 @@ startGameBtn.addEventListener("click", (e) => {
     } else {
         var gameId = makeid(12);
         sessionStorage.setItem("username", username.value);
-        sessionStorage.setItem("mark", "x");
+        sessionStorage.setItem("mark", "X");
         sessionStorage.setItem("gameId", gameId);
         sessionStorage.setItem("join", false);
         document.location.replace("/Board");
@@ -49,7 +51,7 @@ joinGameBtn.addEventListener("click", (e) => {
         e.preventDefault();
         var gameId = roomCodeInput.value;
         sessionStorage.setItem("username", username.value);
-        sessionStorage.setItem("mark", "o");
+        sessionStorage.setItem("mark", "O");
         sessionStorage.setItem("gameId", gameId);
         sessionStorage.setItem("join", true);
         document.location.replace("/Board");
