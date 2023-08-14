@@ -18,5 +18,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: #1a1a2e;
+    color: #f8f8f2;
+    font-family: Arial, sans-serif;
+    margin-bottom: 60px;
 }
