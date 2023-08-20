@@ -16,13 +16,23 @@ if (!localStorage.getItem("turn")) {
     turnLabel.textContent = turn + " Turn"
 }
 
+class Board {
+    //Board Spots is an array
+    Board(boardSpots) {
+        this.boardSpots = boardSpots;
+    }
+
+    // When there is a new move, take old board and 
+    update(newBoard) {
+        this.newBoard = newBoard;
+    }
+}
+
 
 let spacesArray = [];
 for (k = 0; k < 9; k++) {
      spacesArray[k] = boardSpaces[k]
 }
-
-
 
 if (!localStorage.getItem("board-state")) {
     localStorage.setItem("board-state", JSON.stringify([
@@ -132,7 +142,7 @@ connection.on("RecieveMove", function (spot, mark) {
     updateBoard(currentBoardState, spot, mark);
     for (k = 0; k < spacesArray.length; k++) {
         if (currentBoardState[k] != "none") {
-            spacesArray[k].textContent = currentBoardState[k];
+            spacesArray[k].textContent = JSON.parse(localStorage.getItem("board-state"))[k];
         }
     }
     if (checkWinner(JSON.parse(localStorage.getItem("board-state")), mark) === true) {
