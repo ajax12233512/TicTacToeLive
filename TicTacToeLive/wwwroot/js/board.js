@@ -16,17 +16,6 @@ if (!localStorage.getItem("turn")) {
     turnLabel.textContent = turn + " Turn"
 }
 
-class Board {
-    //Board Spots is an array
-    Board(boardSpots) {
-        this.boardSpots = boardSpots;
-    }
-
-    // When there is a new move, take old board and 
-    update(newBoard) {
-        this.newBoard = newBoard;
-    }
-}
 
 
 let spacesArray = [];
